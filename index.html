@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="formRegister">
+        <div>
+            <label for="emailRegister">email</label>
+            <input type="text" id="emailRegister">
+        </div>
+        <div>
+            <label for="passwordRegister">contraseña</label>
+            <input type="password" id="passwordRegister">
+        </div>
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <br>
+
+    <h1>Login</h1>
+    <form id="formLogin">
+        <div>
+            <label for="emailLogin">email</label>
+            <input type="text" id="emailLogin">
+        </div>
+        <div>
+            <label for="passwordLogin">contraseña</label>
+            <input type="password" id="passwordLogin">
+        </div>
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <div id="posts"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDQJlnW06_b60ApSRfFN0VClbPOYxFAzDs",
+            authDomain: "registro-usuarios-6a956.firebaseapp.com",
+            projectId: "registro-usuarios-6a956",
+            storageBucket: "registro-usuarios-6a956.appspot.com",
+            messagingSenderId: "619132184336",
+            appId: "1:619132184336:web:76409a43d77b0debc6a795"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+    </script>
+
+    <script src="./index.js" type="module"></script>
+</body>
+</html>
