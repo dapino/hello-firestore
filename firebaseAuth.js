@@ -26,10 +26,14 @@ export const loginUser = (email, password) => {
     });
 };
 
+export const createPost = () => {
+  db.collection('publicaciones').doc().set({ nombre: 'Daniel' });
+};
+
 db.collection('publicaciones')
   .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((perrito) => {
+  .then((cualquier) => {
+    cualquier.forEach((perrito) => {
       const p = document.createElement('p');
       p.innerText = perrito.data().titulo;
       // doc.data() is never undefined for query doc snapshots
@@ -39,5 +43,3 @@ db.collection('publicaciones')
   .catch((error) => {
     console.log('Error getting documents: ', error);
   });
-
-

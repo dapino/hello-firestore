@@ -1,7 +1,8 @@
-import { registerUser, loginUser } from './firebaseAuth.js';
+import { registerUser, loginUser, createPost } from './firebaseAuth.js';
 
 const formRegister = document.getElementById('formRegister');
 const formLogin = document.getElementById('formLogin');
+const createButton = document.getElementById('createPost');
 
 formRegister.addEventListener('submit', (event) => {
   const emailRegister = document.getElementById('emailRegister').value;
@@ -17,12 +18,13 @@ formLogin.addEventListener('submit', (event) => {
   loginUser(emailLogin, passwordLogin);
 });
 
-db.ref('publicaciones/' + 1).set({
-  titulo: 'nueva publicacion'
+createButton.addEventListener('click', () => {
+  console.log('creating');
+  createPost();
 });
 
-db.collection('publicaciones')
-  .get()
-  .then((gato) => {
-    return gato;
-  });
+// db.collection('publicaciones')
+//   .get()
+//   .then((gato) => {
+//     return gato;
+//   });
