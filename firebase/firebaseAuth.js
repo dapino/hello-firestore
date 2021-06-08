@@ -25,21 +25,3 @@ export const loginUser = (email, password) => {
       // revisa tu contraseña
     });
 };
-
-export const createPost = () => {
-  db.collection('publicaciones').doc().set({ nombre: 'Daniel' });
-};
-
-db.collection('publicaciones')
-  .get()
-  .then((cualquier) => {
-    cualquier.forEach((perrito) => {
-      const p = document.createElement('p');
-      p.innerText = perrito.data().titulo;
-      // doc.data() is never undefined for query doc snapshots
-      posts.append(p);
-    });
-  })
-  .catch((error) => {
-    console.log('Error getting documents: ', error);
-  });

@@ -10,14 +10,14 @@
     <h1>Register</h1>
     <form id="formRegister">
         <div>
-            <label for="emailRegister">email</label>
+            <label for="emailRegister">Email</label>
             <input type="text" id="emailRegister">
         </div>
         <div>
-            <label for="passwordRegister">contraseña</label>
+            <label for="passwordRegister">Password</label>
             <input type="password" id="passwordRegister">
         </div>
-        <button type="submit">Registrarse</button>
+        <button type="submit">Sign Up</button>
     </form>
 
     <br>
@@ -25,20 +25,28 @@
     <h1>Login</h1>
     <form id="formLogin">
         <div>
-            <label for="emailLogin">email</label>
+            <label for="emailLogin">Email</label>
             <input type="text" id="emailLogin">
         </div>
         <div>
-            <label for="passwordLogin">contraseña</label>
+            <label for="passwordLogin">Password</label>
             <input type="password" id="passwordLogin">
         </div>
-        <button type="submit">Ingresar</button>
+        <button type="submit">Login</button>
+    </form>
+
+    <form id="formPosts">
+        <div>
+            <label for="postContent">post content</label>
+            <input type="text" id="postContent">
+        </div>
+        
+        <button type="submit">Create Post</button>
     </form>
 
     <div id="posts"></div>
 
 
-    <button id="createPost">Crear</button>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>

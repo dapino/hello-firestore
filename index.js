@@ -1,26 +1,28 @@
-import { registerUser, loginUser, createPost } from './firebaseAuth.js';
+import { registerUser, loginUser } from './firebase/firebaseAuth.js';
+import { createPost } from './firebase/firestore.js';
 
 const formRegister = document.getElementById('formRegister');
 const formLogin = document.getElementById('formLogin');
-const createButton = document.getElementById('createPost');
+const formPosts = document.getElementById('formPosts');
 
 formRegister.addEventListener('submit', (event) => {
+  event.preventDefault();
   const emailRegister = document.getElementById('emailRegister').value;
   const passwordRegister = document.getElementById('passwordRegister').value;
-  event.preventDefault();
   registerUser(emailRegister, passwordRegister);
 });
 
 formLogin.addEventListener('submit', (event) => {
+  event.preventDefault();
   const emailLogin = document.getElementById('emailLogin').value;
   const passwordLogin = document.getElementById('passwordLogin').value;
-  event.preventDefault();
   loginUser(emailLogin, passwordLogin);
 });
 
-createButton.addEventListener('click', () => {
-  console.log('creating');
-  createPost();
+formPosts.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const postContent = document.getElementById('postContent').value;
+  createPost(postContent);
 });
 
 // db.collection('publicaciones')
